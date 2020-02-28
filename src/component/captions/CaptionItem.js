@@ -1,5 +1,5 @@
 import React from "react";
-import {Title, Date, TagButton} from './style'
+import {Title, Date, TagButton} from '../style'
 
 
 const CaptionItem = () => (

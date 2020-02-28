@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Caption from "./component/Caption";
+import Caption from "./component/captions/Caption";
 import NavBar from "./component/NavBar";
-import Tag from "./component/Tags";
+import CaptionUnderTag from './component/captions/CaptionUnderTag';
+import Tag from "./component/tags/Tags";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -15,6 +16,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route path="/" exact component={Caption} />
+            <Route path="/captionundertag" exact component={CaptionUnderTag} />
             <Route path="/tags" exact component={Tag} />
           </Switch>
         </Router>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import CaptionItem  from './CaptionItem'
 import { Button, ButtonToolbar} from 'react-bootstrap'
-import AddTag from './AddTags'
+import AddTag from '../tags/AddTags'
 import AddCaption from './AddCaption'
 
 const Caption = () => {
