@@ -11,8 +11,7 @@ const Tags = ({ getTags, tag: { tags , loading} }) => {
     getTags();
   }, [getTags]);
 
-  
-
+ 
   // console.log(tags);
 
   if(loading){
@@ -30,7 +29,7 @@ const Tags = ({ getTags, tag: { tags , loading} }) => {
 
         <div className="row">
           {tags.map((tag, index) => (
-            <TagList key={index} tg={tag} id={index + 1} />
+            <TagList key={index} tg={tag} id={index + 1}  />
           ))}
         </div>
       </div>

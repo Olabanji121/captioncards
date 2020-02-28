@@ -1,31 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import { getCaptionWIthTag } from "../../actions/tag";
 import CaptionUnderTag from "../captions/CaptionUnderTag";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
-  // // console.log(tg,tags);
-  // const index = tags.findIndex(tg)
 
-  // console.log(id);
-  const [captionShow, setCaptionShow] = useState({
-      captions:[]
-  });
 
   const handleCaption = () => {
     getCaptionWIthTag(id);
-
-    if(tagsWIthCaption !==null){
-    setCaptionShow({...captionShow, captions: tagsWIthCaption.captions})}
-    
   };
-
-  const {captions} = captionShow
-
-  console.log(captions);
-  
 
   return (
     <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
@@ -37,18 +22,25 @@ const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
           >
             <div className="mt-3">
               <h4>{tg}</h4>
-              <button
-                className=" btn btn-primary"
-                onClick={() => handleCaption()}
-              >
-                Show Caption
-              </button>
 
+              {tagsWIthCaption !== null ? (
+                <Link to="/captionundertag">
+                  {" "}
+                  <button
+                    className=" btn btn-primary"
+                    onClick={() => handleCaption()}
+                  >
+                    show caption
+                  </button>{" "}
+                </Link>
+              ) : (
+                <Link to="/captionundertag">Empty </Link>
+              )}
             </div>
-            
-          {/* { tagsWIthCaption !== null ? ( 
+
+            {/* { tagsWIthCaption !== null ? ( 
            captions.map((cap, i )=>(
-                    <li key={i}>{cap}</li>
+                    <  CaptionUnderTag key={i} cap={cap}/>
                 ))): (<h4> no caption </h4>)} */}
           </ul>
         </div>

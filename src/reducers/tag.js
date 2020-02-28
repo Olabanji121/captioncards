@@ -3,7 +3,7 @@ import { GET_TAGS, TAGS_ERROR, TAGS_WITH_CAPTION } from "../actions/types";
 
 const initialState = {
     tags: [],
-    tagsWIthCaption: null,
+    tagsWIthCaption: '',
     error:{},
     loading: true
 
@@ -18,7 +18,8 @@ export default function(state= initialState, action){
             return {
                 ...state,
                 tags:payload,
-                loading: false
+                loading: false,
+                tagsWIthCaption: '',
             }
         case TAGS_WITH_CAPTION:
             return {

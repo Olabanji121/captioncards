@@ -10,15 +10,11 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse show ml-sm-5 justify-content-end">
 					<ul className="navbar-nav">
 						<li className="navbar-item pl-3">
-							<a to="/" className="nav-link text-secondary">
-								<h5>Captions with Tags</h5>
-							</a>
+							<Link to="/" className="nav-link text-secondary">
+								<h5>Captions </h5>
+							</Link>
 						</li>
-						<li className="navbar-item pl-3">
-							<a to="/" className="nav-link text-secondary">
-								<h5>Captions Under Tags</h5>
-							</a>
-						</li>
+						
 						<li className="navbar-item pl-3">
 							<Link to="/tags" className="nav-link text-secondary">
 								<h5>Tags</h5>
