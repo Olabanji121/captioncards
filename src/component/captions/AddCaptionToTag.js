@@ -1,30 +1,38 @@
-import React, {useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {Modal, Button, Row, Col} from 'react-bootstrap'
 import { connect } from "react-redux";
 import { withRouter} from 'react-router-dom'
-import {addCaption} from '../../actions/captions'
+import {addCaptionToTag} from '../../actions/captions'
+import {getTags} from '../../actions/tag'
 
+const AddCaptionToTag = ({tagsWIthCaption, show, onHide, history, addCaptionToTag}) => {
 
-const AddCaption = ({ show, onHide, addCaption , history}) => {
+    useEffect(() => {
+        addCaptionToTag();
+      }, [addCaptionToTag]);
 
-  const [formData, setFormData] = useState({
-    caption: ""
-  });
-
-  const onChange = e =>
-  setFormData({ ...formData, caption: e.target.value });
-
-const handleSubmit = e => {
-  e.preventDefault();
-
-  addCaption(formData, history)
-
-  setFormData({ ...formData, caption:''})
-
-  console.log(formData);
-
-  onHide()
-};
+    const [formData, setFormData] = useState({
+        caption: "",
+        tags: []
+      });
+    
+     
+      
+    const onChange = e =>{
+    setFormData({ ...formData, caption: e.target.value, tags:[tagsWIthCaption.tag] });
+}
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+  
+     addCaptionToTag(formData, history)
+  
+    // setFormData({ ...formData, caption:''})
+  
+    console.log(formData);
+  
+    onHide()
+  };
     return (
         <Modal
         show={show}
@@ -35,17 +43,17 @@ const handleSubmit = e => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add Caption
+            Add Caption to <span className=" text-capitalize"> {tagsWIthCaption.tag}</span> Tag
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-
+        <small>A Caption More Than 3 Characters, Less Than 100</small>
             <div className="container">
                 <Row>
                     <Col sm={6}>
                     <form onSubmit={e => handleSubmit(e)}>
                 <div>
-                  <label htmlFor="addcaption">Add Caption</label>
+    <label htmlFor="addcaption">Add Caption </label>
                   <input
                     type="text"
                     name="addcaption"
@@ -70,4 +78,4 @@ const handleSubmit = e => {
     )
 }
 
-export default connect(null, {addCaption}) (withRouter (AddCaption))
+export default connect(null, {addCaptionToTag, getTags}) ( withRouter(  AddCaptionToTag))

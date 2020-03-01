@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { Button, ButtonToolbar } from "react-bootstrap";
+
 import { getCaptionWIthTag } from "../../actions/tag";
-import CaptionUnderTag from "../captions/CaptionUnderTag";
-import { Link, Redirect } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 
 const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
-
-
   const handleCaption = () => {
     getCaptionWIthTag(id);
   };
@@ -37,11 +35,6 @@ const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
                 <Link to="/captionundertag">Empty </Link>
               )}
             </div>
-
-            {/* { tagsWIthCaption !== null ? ( 
-           captions.map((cap, i )=>(
-                    <  CaptionUnderTag key={i} cap={cap}/>
-                ))): (<h4> no caption </h4>)} */}
           </ul>
         </div>
       </div>

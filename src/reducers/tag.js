@@ -1,8 +1,9 @@
-import { GET_TAGS, TAGS_ERROR, TAGS_WITH_CAPTION } from "../actions/types";
+import { GET_TAGS, TAGS_ERROR, TAGS_WITH_CAPTION, ADD_TAGS } from "../actions/types";
 
 
 const initialState = {
     tags: [],
+    newTag: '',
     tagsWIthCaption: '',
     error:{},
     loading: true
@@ -20,6 +21,12 @@ export default function(state= initialState, action){
                 tags:payload,
                 loading: false,
                 tagsWIthCaption: '',
+            }
+        case ADD_TAGS:
+            return {
+                ...state,
+                newTag:payload,
+                loading: false
             }
         case TAGS_WITH_CAPTION:
             return {

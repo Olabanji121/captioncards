@@ -1,25 +1,17 @@
 import React, {useState} from 'react'
-import CaptionItem  from './CaptionItem'
+import CaptionList  from './CaptionList'
 import { Button, ButtonToolbar} from 'react-bootstrap'
-import AddTag from '../tags/AddTags'
+
 import AddCaption from './AddCaption'
 
 const Caption = () => {
-    const [tagModalShow, setTagModalShow] = useState(false);
+   
     const [captionModalShow, setCaptionModalShow] = useState(false);
 
 
     return (
         <>
-            <ButtonToolbar>
-               
-                <Button variant='primary' onClick={()=> setTagModalShow(true)}>
-                    Add Tag
-                </Button>
-
-                
-                <AddTag show={tagModalShow} onHide={()=> setTagModalShow(false)}/>
-            </ButtonToolbar>
+            
             <div className="mt-3">
             <ButtonToolbar>
             <Button variant='primary' onClick={()=> setCaptionModalShow(true)}>
@@ -29,7 +21,7 @@ const Caption = () => {
             </ButtonToolbar>
             </div>
             
-           <CaptionItem/> 
+           <CaptionList/> 
         </>
     )
 }

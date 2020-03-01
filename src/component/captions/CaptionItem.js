@@ -1,27 +1,41 @@
 import React from "react";
-import {Title, Date, TagButton} from '../style'
+import {Title, Date} from '../style'
 
 
-const CaptionItem = () => (
-    <div
-    className="col-10 mx-auto col-md-6 col-lg-4 my-3"
-    
-  >
-    <div className="card" style={{ height: "100%" , color:'#555' }}>
-    <Date>
-        #1
+const CaptionItem = ({caption, id}) => {
+
+ 
+   return(
+    <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
+    <div className="card" style={{ height: "100%" }}>
+      <div className="card-body text-capitalize">
+        <div
+          className="text-warning text-slanted text-center img-card-top p-3 m-3"
+          style={{ height: "15rem" }}
+        >
+          <Date>
+        #{id}
       </Date>
       <span className="text-center"  style={{ height: "10rem" }}> 
-      <Title>The Benefits of Green Apples</Title>
+   <Title>{caption}</Title>
       </span>
      
-      <div className="card-footer text-center">
-      <TagButton>Tags: Tags</TagButton>
-      <button>Add Tag to caption</button>
+      
+        </div>
       </div>
-     
     </div>
   </div>
-);
+
+
+
+
+    
+   )
+}
+
+
+
+
+
 
 export default CaptionItem;

@@ -1,60 +1,72 @@
-import React from 'react'
-import {Modal, Button, Row, Col,Form} from 'react-bootstrap'
+import React, { useState } from "react";
+import { Modal, Button, Row, Col } from "react-bootstrap";
+import { addTag } from "../../actions/tag";
+import { connect } from "react-redux";
+import { withRouter} from 'react-router-dom'
+const AddTags = ({ show, onHide, addTag , history}) => {
+  const [formData, setFormData] = useState({
+    tag: ""
+  });
+
+  const { tag } = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, tag: e.target.value });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    addTag(formData, history)
+
+    setFormData({ ...formData, tag:''})
+
+    console.log(formData);
+    // alert(`Tag Added`)
+    onHide()
+  };
+  return (
+    <Modal
+      show={show}
+      onHide={onHide}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">Add Tags</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div className="container">
+          <Row>
+            <Col sm={6}>
+              <form onSubmit={e => handleSubmit(e)}>
+                <div>
+                  <label htmlFor="addtag">Add Tag</label>
+                  <input
+                    type="text"
+                    name="addtag"
+                    
+                    className="form-control"
+                    placeholder="Enter the the name of Tag"
+                    onChange={e => onChange(e)}
+                    required
+                  />
+                </div>
+                <button type="submit">Add Tag</button>
+              </form>
+            </Col>
+          </Row>
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="danger" onClick={onHide}>
+          Close
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
 
 
-const AddTags = (props) => {
 
-    const handleSubmit =(e)=>{
-        e.preventDefault()
-
-        alert(e.target.addtag.value)
-        
-    }
-    return (
-        <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Add Tags
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-
-            <div className="container">
-                <Row>
-                    <Col sm={6}>
-                        <Form onSubmit={(e)=>handleSubmit(e)}>
-                            <Form.Group controlId="addtag">
-                               <Form.Label>Add Tag</Form.Label>
-                               <Form.Control
-                                
-                                type="text"
-                                name="addtag"
-                                required
-                                placeholder="Add Tag"
-                               
-                               />
-                            </Form.Group>
-                            <Form.Group>
-                                <Button varient="primary" type="submit">
-                                    Add Tag
-                                </Button>
-                            </Form.Group>
-                        </Form>
-                    </Col> 
-                </Row> 
-            </div>
-          
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant='danger' onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    )
-}
-
-export default AddTags
+export default connect(null, { addTag })(withRouter( AddTags));
