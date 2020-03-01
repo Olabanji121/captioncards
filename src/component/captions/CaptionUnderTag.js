@@ -71,7 +71,7 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
           <div className=" text-center  mb-3">
             <Link to="/tags">
               {" "}
-              <button className=" btn btn-primary">Back to Tags</button>{" "}
+              <button className=" btn btn-secondary">Back to Tags</button>{" "}
             </Link>
           </div>
         </div>
