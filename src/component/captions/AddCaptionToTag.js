@@ -47,13 +47,13 @@ const AddCaptionToTag = ({tagsWIthCaption, show, onHide, history, addCaptionToTa
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <small>A Caption More Than 3 Characters, Less Than 100</small>
+        <small className="px-3">A Caption More Than 3 Characters, Less Than 100</small>
             <div className="container">
                 <Row>
                     <Col sm={6}>
                     <form onSubmit={e => handleSubmit(e)}>
-                <div>
-    <label htmlFor="addcaption">Add Caption </label>
+                <div className="rounded">
+    
                   <input
                     type="text"
                     name="addcaption"
@@ -64,7 +64,7 @@ const AddCaptionToTag = ({tagsWIthCaption, show, onHide, history, addCaptionToTa
                     required
                   />
                 </div>
-                <button type="submit">Add Caption</button>
+                <button className="btn btn-secondary mt-3" type="submit">Add Caption</button>
               </form>
                     </Col> 
                 </Row> 

@@ -23,19 +23,29 @@ const Tags = ({ getTags, tag: { tags , loading, newTag} }) => {
     <>
       <div className="container py-5">
         <div className="row">
-          <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3">
+          <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 shadow rounded">
             <h1 className="text-slanted">Tag list</h1>
           </div>
         </div>
-        <ButtonToolbar>
-               
-                <Button variant='primary' onClick={()=> setTagModalShow(true)}>
-                    Add Tag
-                </Button>
 
-                
-                <AddTag show={tagModalShow} onHide={()=> setTagModalShow(false)}/>
-            </ButtonToolbar>
+        <div className="container">
+          <div className="row">
+            <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 mt-3 rounded">
+              <div className="shadow">
+              <ButtonToolbar>
+               
+               <Button variant='secondary' onClick={()=> setTagModalShow(true)} block>
+                   Add Tag
+               </Button>
+
+               
+               <AddTag show={tagModalShow} onHide={()=> setTagModalShow(false)}/>
+           </ButtonToolbar>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div className="row">
           {tags.map((tag, index) => (
             <TagList key={index} tg={tag} id={index + 1}  />
@@ -51,3 +61,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { getTags })(Tags);
+
+

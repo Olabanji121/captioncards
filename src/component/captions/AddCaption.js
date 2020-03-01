@@ -44,8 +44,8 @@ const handleSubmit = e => {
                 <Row>
                     <Col sm={6}>
                     <form onSubmit={e => handleSubmit(e)}>
-                <div>
-                  <label htmlFor="addcaption">Add Caption</label>
+                <div className="rounded">
+                  {/* <label htmlFor="addcaption">Add Caption</label> */}
                   <input
                     type="text"
                     name="addcaption"
@@ -56,7 +56,7 @@ const handleSubmit = e => {
                     required
                   />
                 </div>
-                <button type="submit">Add Caption</button>
+                <button className="btn btn-secondary mt-3" type="submit">Add Caption</button>
               </form>
                     </Col> 
                 </Row> 

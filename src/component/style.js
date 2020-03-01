@@ -1,25 +1,24 @@
 import styled from "styled-components";
 
 
-export const Title = styled.h2`
-  color: #f15025;
+export const Title = styled.p`
+  color: #34252F;
   font-weight: 300;
-  padding-top: 35px;
+  font-size: 20px;
+  padding: 2.5rem .5rem;
+  margin-top: 28px;
   font-family: "Courgette", cursive;
 `;
 export const Date = styled.div`
-  color: #f15025;
+  color: #34252F;
   font-weight: 300;
-  padding: 8px;
+  padding-top: 5px;
 `;
 
-export const TagButton = styled.a`
-  margin: 0 5px;
-  padding: 8px 14px;
-  background: rgba(155, 155, 155, 0.2);
-  color: black;
-  border: 1px solid #f5f5;
-  outline: 0;
+export const Tag = styled.h4`
+ 
+  color:#34252F;
+  font-family: "Courgette", cursive;
   font-weight: 300;
 `;
 

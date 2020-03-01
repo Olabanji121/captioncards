@@ -1,29 +1,12 @@
-import React, {useState} from 'react'
-import CaptionList  from './CaptionList'
-import { Button, ButtonToolbar} from 'react-bootstrap'
-
-import AddCaption from './AddCaption'
+import React from "react";
+import CaptionList from "./CaptionList";
 
 const Caption = () => {
-   
-    const [captionModalShow, setCaptionModalShow] = useState(false);
+  return (
+    <>
+      <CaptionList />
+    </>
+  );
+};
 
-
-    return (
-        <>
-            
-            <div className="mt-3">
-            <ButtonToolbar>
-            <Button variant='primary' onClick={()=> setCaptionModalShow(true)}>
-                    Add Caption
-                </Button>
-                <AddCaption show={captionModalShow} onHide={()=> setCaptionModalShow(false)}/>
-            </ButtonToolbar>
-            </div>
-            
-           <CaptionList/> 
-        </>
-    )
-}
-
-export default Caption
+export default Caption;

@@ -6,17 +6,17 @@ const CaptionItem = ({caption, id}) => {
 
  
    return(
-    <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
-    <div className="card" style={{ height: "100%" }}>
-      <div className="card-body text-capitalize">
+    <div className="col-10 mx-auto col-md-6 col-lg-4 my-3 ">
+    <div className="card  bg-warning shadow border-0 rounded " style={{ height: "100%" }}>
+      <div className="card-text text-capitalize">
         <div
-          className="text-warning text-slanted text-center img-card-top p-3 m-3"
+          className="text-warning text-slanted text-center img-card-top pb-1 "
           style={{ height: "15rem" }}
         >
           <Date>
-        #{id}
+        <span class="badge badge-light">{id}</span>
       </Date>
-      <span className="text-center"  style={{ height: "10rem" }}> 
+      <span className="text-center pb-5"  style={{ height: "15rem", paddingBottom: "30px" }}> 
    <Title>{caption}</Title>
       </span>
      

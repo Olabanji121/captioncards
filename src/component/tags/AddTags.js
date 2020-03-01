@@ -40,19 +40,19 @@ const AddTags = ({ show, onHide, addTag , history}) => {
           <Row>
             <Col sm={6}>
               <form onSubmit={e => handleSubmit(e)}>
-                <div>
-                  <label htmlFor="addtag">Add Tag</label>
+                <div className="rounded">
+                  {/* <label htmlFor="addtag">Add Tag</label> */}
                   <input
                     type="text"
                     name="addtag"
                     
                     className="form-control"
-                    placeholder="Enter the the name of Tag"
+                    placeholder="Enter Tag Name"
                     onChange={e => onChange(e)}
                     required
                   />
                 </div>
-                <button type="submit">Add Tag</button>
+                <button className="btn btn-secondary mt-3" type="submit">Add Tag</button>
               </form>
             </Col>
           </Row>
