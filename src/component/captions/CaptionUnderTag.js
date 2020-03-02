@@ -59,7 +59,7 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
           <div className="row">
             <div className="col text-capitalize bg-warning text-sm-left ">
               {tagsWIthCaption && tagsWIthCaption.captions.length === 0 ? (
-                <h2>No Caption</h2>
+                <h2 className="text-center">No Caption</h2>
               ) : (
                 tagsWIthCaption &&
                 tagsWIthCaption.captions.map((caption, index) => (
