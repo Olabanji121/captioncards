@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 const NavBar = () => {
     return (
 			<nav className="navbar navbar-expand-sm navrbar-light bg-light">
-				<Nav>Caption<span style={{fontFamily:"Open Sans", color:"#555"}}>Cards</span></Nav>
+				<Nav> <span className="pl-3">Caption</span><span style={{fontFamily:"Open Sans", color:"#555"}}>Cards</span></Nav>
                 <div className="collapse navbar-collapse show ml-sm-5 justify-content-end">
 					<ul className="navbar-nav">
 						<li className="navbar-item pl-3">

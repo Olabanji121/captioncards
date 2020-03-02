@@ -1,19 +1,20 @@
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import TagReducer from "../../reducers/tag";
+import CaptionReducer from "../../reducers/captions";
 
 configure({ adapter: new Adapter() });
 
-describe("Tag Reducer", () => {
+describe("Caption Reducer", () => {
   const defaultState = {
-    tags: [],
-    newTag: "",
-    tagsWIthCaption: "",
+    captions: [],
+    newCaption: "",
+    addCaptionToTAg: "",
     error: {},
     loading: true
   };
 
   it("Should return default state", () => {
-    expect(TagReducer(undefined,{})).toEqual(defaultState);
+
+    expect(CaptionReducer(undefined,{})).toEqual(defaultState);
   });
-}); 
+});
