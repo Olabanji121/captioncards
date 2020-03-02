@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import Flip from 'react-reveal/Flip'
 import { getCaptionWIthTag } from "../../actions/tag";
 import {Tag, Date} from '../style'
 import { Link } from "react-router-dom";
@@ -22,7 +22,10 @@ const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
         <span class="badge badge-light">{id}</span>
       </Date>
             <div className="mt-3">
+              <Flip>
               <Tag>{tg}</Tag>
+              </Flip>
+            
                 <div className="pt-3">
                 {tagsWIthCaption !== null ? (
                 <Link to="/captionundertag">

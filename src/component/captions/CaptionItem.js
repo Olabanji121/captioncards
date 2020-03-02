@@ -1,5 +1,6 @@
 import React from "react";
 import {Title, Date} from '../style'
+import Flip from 'react-reveal/Flip'
 
 
 const CaptionItem = ({caption, id}) => {
@@ -17,7 +18,10 @@ const CaptionItem = ({caption, id}) => {
         <span class="badge badge-light">{id}</span>
       </Date>
       <span className="text-center pb-5"  style={{ height: "15rem", paddingBottom: "30px" }}> 
-   <Title>{caption}</Title>
+        <Flip>
+        <Title>{caption}</Title>
+        </Flip>
+   
       </span>
      
       

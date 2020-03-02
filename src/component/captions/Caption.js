@@ -4,7 +4,10 @@ import CaptionList from "./CaptionList";
 const Caption = () => {
   return (
     <>
-      <CaptionList />
+    <div className="test">
+    <CaptionList />
+    </div>
+     
     </>
   );
 };

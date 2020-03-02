@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import AddCaptionToTag from "./AddCaptionToTag";
 import CaptionUnderTagItem from "./CaptionUnderTagItem";
+import Fade from 'react-reveal/Fade';
+import Flash from 'react-reveal/Flash';
 
 const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
   console.log(tagsWIthCaption);
@@ -20,9 +22,12 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
       <div className="container py-5">
         <div className="row">
           <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 shadow rounded">
+            <Fade  left > 
             <h1 className="text-slanted">
               Captions Under {tagsWIthCaption.tag} Tag{" "}
             </h1>
+            </Fade >
+            
           </div>
         </div>
 
@@ -30,7 +35,9 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
           <div className="row">
             <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 mt-3 rounded">
               <div className="shadow">
+              <Flash>
                 <ButtonToolbar>
+                 
                   <Button
                     variant="secondary"
                     onClick={() => setTagModalShow(true)}
@@ -38,6 +45,8 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
                   >
                     Add Caption to Tag
                   </Button>
+                 
+                  
 
                   <AddCaptionToTag
                     tagsWIthCaption={tagsWIthCaption}
@@ -45,6 +54,7 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
                     onHide={() => setTagModalShow(false)}
                   />
                 </ButtonToolbar>
+                </Flash>
               </div>
             </div>
           </div>

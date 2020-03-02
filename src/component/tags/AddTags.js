@@ -8,7 +8,7 @@ const AddTags = ({ show, onHide, addTag , history}) => {
     tag: ""
   });
 
-  const { tag } = formData;
+
 
   const onChange = e =>
     setFormData({ ...formData, tag: e.target.value });
