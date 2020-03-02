@@ -4,7 +4,7 @@ import Caption from "./component/captions/Caption";
 import NavBar from "./component/NavBar";
 import CaptionUnderTag from './component/captions/CaptionUnderTag';
 import Tag from "./component/tags/Tag";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 function App() {
@@ -17,6 +17,7 @@ function App() {
             <Route path="/" exact component={Caption} />
             <Route path="/captionundertag" exact component={CaptionUnderTag} />
             <Route path="/tags" exact component={Tag} />
+            <Redirect to="/" />
           </Switch>
         </Router>
       </Provider>
