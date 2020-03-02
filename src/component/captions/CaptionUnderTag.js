@@ -59,11 +59,9 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
             </div>
           </div>
         </div>
-        <div
-          className="card  bg-warning shadow border-0 rounded "
-          style={{ height: "100%" }}
-        >
-          <div className="card-body text-capitalize">
+        <div className="container ">
+          <div className="row">
+            <div className="col text-capitalize bg-warning text-sm-left ">
             {tagsWIthCaption && tagsWIthCaption.captions.length === 0 ? (
               <h2>No Caption</h2>
             ) : (
@@ -76,9 +74,11 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
                 />
               ))
             )}
+            </div>
+            
           </div>
 
-          <div className=" text-center  mb-3">
+          <div className=" text-center  m-3">
             <Link to="/tags">
               {" "}
               <button className=" btn btn-secondary">Back to Tags</button>{" "}
