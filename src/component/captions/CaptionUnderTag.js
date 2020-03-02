@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import AddCaptionToTag from "./AddCaptionToTag";
 import CaptionUnderTagItem from "./CaptionUnderTagItem";
-import Fade from 'react-reveal/Fade';
-import Flash from 'react-reveal/Flash';
+import Fade from "react-reveal/Fade";
+import Flash from "react-reveal/Flash";
 
 const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
   console.log(tagsWIthCaption);
@@ -22,12 +22,11 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
       <div className="container py-5">
         <div className="row">
           <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 shadow rounded">
-            <Fade  left > 
-            <h1 className="text-slanted">
-              Captions Under {tagsWIthCaption.tag} Tag{" "}
-            </h1>
-            </Fade >
-            
+            <Fade left>
+              <h1 className="text-slanted">
+                Captions Under {tagsWIthCaption.tag} Tag{" "}
+              </h1>
+            </Fade>
           </div>
         </div>
 
@@ -35,25 +34,22 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
           <div className="row">
             <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3 mt-3 rounded">
               <div className="shadow">
-              <Flash>
-                <ButtonToolbar>
-                 
-                  <Button
-                    variant="secondary"
-                    onClick={() => setTagModalShow(true)}
-                    block
-                  >
-                    Add Caption to Tag
-                  </Button>
-                 
-                  
+                <Flash>
+                  <ButtonToolbar>
+                    <Button
+                      variant="secondary"
+                      onClick={() => setTagModalShow(true)}
+                      block
+                    >
+                      Add Caption to Tag
+                    </Button>
 
-                  <AddCaptionToTag
-                    tagsWIthCaption={tagsWIthCaption}
-                    show={tagModalShow}
-                    onHide={() => setTagModalShow(false)}
-                  />
-                </ButtonToolbar>
+                    <AddCaptionToTag
+                      tagsWIthCaption={tagsWIthCaption}
+                      show={tagModalShow}
+                      onHide={() => setTagModalShow(false)}
+                    />
+                  </ButtonToolbar>
                 </Flash>
               </div>
             </div>
@@ -62,20 +58,19 @@ const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
         <div className="container ">
           <div className="row">
             <div className="col text-capitalize bg-warning text-sm-left ">
-            {tagsWIthCaption && tagsWIthCaption.captions.length === 0 ? (
-              <h2>No Caption</h2>
-            ) : (
-              tagsWIthCaption &&
-              tagsWIthCaption.captions.map((caption, index) => (
-                <CaptionUnderTagItem
-                  key={index}
-                  tagsWIthCaption={caption}
-                  id={index + 1}
-                />
-              ))
-            )}
+              {tagsWIthCaption && tagsWIthCaption.captions.length === 0 ? (
+                <h2>No Caption</h2>
+              ) : (
+                tagsWIthCaption &&
+                tagsWIthCaption.captions.map((caption, index) => (
+                  <CaptionUnderTagItem
+                    key={index}
+                    tagsWIthCaption={caption}
+                    id={index + 1}
+                  />
+                ))
+              )}
             </div>
-            
           </div>
 
           <div className=" text-center  m-3">
