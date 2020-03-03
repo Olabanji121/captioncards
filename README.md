@@ -42,7 +42,7 @@ Also on the landing page you can **Add Caption**  with a click of Add Caption bu
 
 ***Note:*** **you can only add one Caption at a time and also the character most be more than 3, and less than 100**
 
-<div style="text-align:center"><img width="600" alt="addCaption" src="https://res.cloudinary.com/obanj/image/upload/v1583226994/DevHangout/zicl/add_Caption_ewoerl.jpg">
+<div align="center"><img width="600" alt="addCaption" src="https://res.cloudinary.com/obanj/image/upload/v1583226994/DevHangout/zicl/add_Caption_ewoerl.jpg">
 </div>
 
 ## 
