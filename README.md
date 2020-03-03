@@ -77,6 +77,6 @@ On each Tag on the Tag list page there is a **Show Caption** button, a click of 
 
 
 
-On this page you can Add Caption to the  selected Tag with the **Add caption to Tag** button(the button uses this endpoint [Create caption with tags](https://capcards-api.herokuapp.com/v1.0/api/caption/multi)  ) to show a modal as seen below, and also there is a **Back to Tags** button (under the list of the captions)  to take you back to the Tag list page 
+On this page you can Add Caption to the  selected Tag with the **Add caption to Tag** button(the button uses this endpoint [Create caption with tags](https://capcards-api.herokuapp.com/v1.0/api/caption/multi)  ) it show a modal as seen below, and also, there is a **Back to Tags** button (under the list of the captions)  to take you back to the Tag list page 
 
 <div align="center"><img width="600" alt="addcaptiontotag" src="https://res.cloudinary.com/obanj/image/upload/v1583226862/DevHangout/zicl/addcaptiontotag_vpvjmo.jpg"></div>
