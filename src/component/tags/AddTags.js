@@ -29,7 +29,7 @@ const AddTags = ({ show, onHide, addTag, history }) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Add Tags</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Add Tag</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <small className="px-3">

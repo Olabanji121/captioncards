@@ -9,31 +9,52 @@ Below is the link to the API Documentation used for this frontend application
 
 Six server endpoint was consumed for this Apllication;
 
-[Get all Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/)
-[Add Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/)
-[Get all Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/)
-[Add Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/)
-[Get Captions under Tag](https://capcards-api.herokuapp.com/v1.0/api/caption/withTag?tagId=2)
-[Create caption with tags](https://capcards-api.herokuapp.com/v1.0/api/caption/multi)
+- [Get all Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/)
+- [Add Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/)
+- [Get all Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/)
+- [Add Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/)
+- [Get Captions under Tag](https://capcards-api.herokuapp.com/v1.0/api/caption/withTag?tagId=2)
+- [Create caption with tags](https://capcards-api.herokuapp.com/v1.0/api/caption/multi)
 
 
 
 ## Technology Used 
-- Client side Framework: ***React (React Hooks) ***
+- Client side Framework: ***React (React Hooks)***
 - State Management : ***Redux***
-- Testing: ***Jest and Enzyme ***
+- Testing: ***Jest and Enzyme***
 - Hosting: ***Netlify***
 - API Calls: ***Axios***
 - CSS Styling: ***Styled Components and Bootstrap***
 - Animations: ***React Reveal***
 
 
-## Guide
+## User Guide
+
+On the Navigation Bar there are two links **Captions** and **Tags**;
+
+## 
+***Captions*** link show the list of all captions (**Caption List**) which shows on the landing page once the app loads, the list of all caption is gotten from the server endpoint [Get all Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/).
+
+<img width="500" alt="CaptionList" src="https://res.cloudinary.com/obanj/image/upload/v1583226889/DevHangout/zicl/captionlist_sxd1jf.jpg">
+
+Also on the landing page you can **Add Caption**  with a click of Add Caption button a modal will pop up for you to input your Caption and click on Add Caption button on the modal, the Add Caption button  on the modal make use of [Add Captions](https://capcards-api.herokuapp.com/v1.0/api/caption/) API endpoint
+
+***Note:*** **you can only add one Caption at a time and also the character most be more than 3, and less than 100**
+
+<img width="500" alt="addCaption" src="https://res.cloudinary.com/obanj/image/upload/v1583226994/DevHangout/zicl/add_Caption_ewoerl.jpg">
+
+## 
+***Tags*** link shows another page with the list of Tags (**Tag List**) which is a response from this server endpoint [Get all Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/)
+
+<img width="500" alt="tagList" src="https://res.cloudinary.com/obanj/image/upload/v1583226908/DevHangout/zicl/Tag_list_vddvwa.jpg">
 
 
-### Design
-Below is a simple design to get you started on what the project look can be. 
-**Note:** this is only a guide, as you are free to use your initative and imagination.
+Tag List page you can ***Add Tag*** by clicking on the Add Tag button on the page which pops up a modal,  input your tag and click the Add Tag button on the modal, the Add Tag button on the modal uses the [Add Tags](https://capcards-api.herokuapp.com/v1.0/api/tag/) API endpoint
 
-<img width="1212" alt="Screenshot 2020-02-20 at 22 18 57" src="https://user-images.githubusercontent.com/60140805/74979630-4a010b80-542f-11ea-94f6-95311d91a407.png">
+<img width="500" alt="addtag" src="https://res.cloudinary.com/obanj/image/upload/v1583226867/DevHangout/zicl/addtag_ixi3jm.jpg">
 
+
+On each Tag on the Tag list page there is a **Show Caption** button, a click of the button will take you to a page showing the captions on that Tag(the button uses this  endpoint [Get Captions under Tag](https://capcards-api.herokuapp.com/v1.0/api/caption/withTag?tagId=2)), on this page you can Add Caption to the  selected Tag with the ***Add caption to Tag** button(the button uses this endpoint [Create caption with tags](https://capcards-api.herokuapp.com/v1.0/api/caption/multi)  ), and also there is a **Back to Tags** button (under the list of the captions)  to take you back to the Tag list page 
+
+
+<img width="500" alt="addcaptiontotag" src="https://res.cloudinary.com/obanj/image/upload/v1583226862/DevHangout/zicl/addcaptiontotag_vpvjmo.jpg">
