@@ -17,8 +17,6 @@ const CaptionList = ({
     getCaptions();
   }, [getCaptions, newCaption]);
 
-  console.log(captions);
-
   if (loading) {
     return <Spinner />;
   }

@@ -11,8 +11,6 @@ export const getCaptions = ()=> async dispatch => {
             type: GET_CAPTIONS,
             payload: res.data.data.captions
         })
-
-        // console.log(res.data.data);
         
     } catch (err) {
         dispatch({

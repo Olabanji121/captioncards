@@ -2,27 +2,23 @@ import React, { useState } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 import { addTag } from "../../actions/tag";
 import { connect } from "react-redux";
-import { withRouter} from 'react-router-dom'
-const AddTags = ({ show, onHide, addTag , history}) => {
+import { withRouter } from "react-router-dom";
+const AddTags = ({ show, onHide, addTag, history }) => {
   const [formData, setFormData] = useState({
     tag: ""
   });
 
-
-
   const onChange = e =>
-    setFormData({ ...formData, tag: e.target.value });
+    setFormData({ ...formData, tag: e.target.value.toLowerCase() });
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    addTag(formData, history)
+    addTag(formData, history);
 
-    setFormData({ ...formData, tag:''})
+    setFormData({ ...formData, tag: "" });
 
-    console.log(formData);
-    // alert(`Tag Added`)
-    onHide()
+    onHide();
   };
   return (
     <Modal
@@ -36,6 +32,9 @@ const AddTags = ({ show, onHide, addTag , history}) => {
         <Modal.Title id="contained-modal-title-vcenter">Add Tags</Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        <small className="px-3">
+          Add a Tag More Than 3 Characters, Less Than 30
+        </small>
         <div className="container">
           <Row>
             <Col sm={6}>
@@ -45,14 +44,15 @@ const AddTags = ({ show, onHide, addTag , history}) => {
                   <input
                     type="text"
                     name="addtag"
-                    
                     className="form-control"
                     placeholder="Enter Tag Name"
                     onChange={e => onChange(e)}
                     required
                   />
                 </div>
-                <button className="btn btn-secondary mt-3" type="submit">Add Tag</button>
+                <button className="btn btn-secondary mt-3" type="submit">
+                  Add Tag
+                </button>
               </form>
             </Col>
           </Row>
@@ -67,6 +67,4 @@ const AddTags = ({ show, onHide, addTag , history}) => {
   );
 };
 
-
-
-export default connect(null, { addTag })(withRouter( AddTags));
+export default connect(null, { addTag })(withRouter(AddTags));

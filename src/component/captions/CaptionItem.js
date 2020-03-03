@@ -15,7 +15,7 @@ const CaptionItem = ({caption, id}) => {
           style={{ height: "15rem" }}
         >
           <Date>
-        <span class="badge badge-light">{id}</span>
+        <span className="badge badge-light">{id}</span>
       </Date>
       <span className="text-center pb-5"  style={{ height: "15rem", paddingBottom: "30px" }}> 
         <Flip>

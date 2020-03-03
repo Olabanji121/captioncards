@@ -19,7 +19,7 @@ const TagList = ({ tg, tag: { tagsWIthCaption }, getCaptionWIthTag, id }) => {
             style={{ height: "8rem" }}
           >
              <Date>
-        <span class="badge badge-light">{id}</span>
+        <span className="badge badge-light">{id}</span>
       </Date>
             <div className="mt-3">
               <Flip>

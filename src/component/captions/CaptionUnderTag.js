@@ -9,8 +9,6 @@ import Fade from "react-reveal/Fade";
 import Flash from "react-reveal/Flash";
 
 const CaptionUnderTag = ({ tag: { tagsWIthCaption } }) => {
-  console.log(tagsWIthCaption);
-
   const [tagModalShow, setTagModalShow] = useState(false);
 
   if (tagsWIthCaption === "") {

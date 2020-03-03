@@ -21,7 +21,7 @@ const handleSubmit = e => {
 
   setFormData({ ...formData, caption:''})
 
-  console.log(formData);
+
 
   onHide()
 };
@@ -39,7 +39,7 @@ const handleSubmit = e => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-
+        <small className="px-3">Add a Caption More Than 3 Characters, Less Than 100</small>
             <div className="container">
                 <Row>
                     <Col sm={6}>
